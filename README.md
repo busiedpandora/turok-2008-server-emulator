@@ -3,7 +3,7 @@
 Quazal Rendez-Vous emulator for the PC version of Turok (2008, Propaganda Games), for game preservation.
 Based on the research of the Ghost Recon Online and Ghost Recon Future Soldier backends.
 
-[Turok server emulator example (video)](docs/videos/Turok%20server%20emulator%20example.mp4)
+[Small demo video](docs/videos/demo.mp4)
 
 ## Known facts
 
