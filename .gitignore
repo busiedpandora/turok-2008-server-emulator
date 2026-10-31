@@ -1,0 +1,12 @@
+*.exe
+*.pdb
+bin/
+obj/
+logs/
+.vs/
+accounts.txt
+tools/Disasm/Iced.dll
+# memory dumps of the game (copyrighted, large)
+*.image.bin
+tools/DdlDump/ddl.txt
+tools/capture/

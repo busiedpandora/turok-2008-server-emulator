@@ -1,0 +1,22 @@
+; TurokServer settings for an internet-facing server (VPS).
+; Copy this file next to TurokServer.exe as "server.ini" and adjust it.
+
+; Public IPv4 address of the server, or a DNS name (resolved once at startup).
+; It is written into the station URLs the game receives, so it must be reachable by every player.
+PublicAddress=203.0.113.10
+
+; UDP ports (defaults). Open both in the VPS firewall and in the provider's network firewall.
+AuthPort=30720
+SecurePort=30721
+
+; Local game port of Turok (UE3 default). Used for players behind the same router.
+GamePort=7777
+
+; Protection
+MaxConnectionsPerIp=16
+MaxDatagramSize=2048
+
+; Logging: packet-level lines are very verbose, keep them off in production.
+LogPackets=false
+LogMaxMB=20
+LogKeepFiles=30

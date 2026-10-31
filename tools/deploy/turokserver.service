@@ -1,0 +1,26 @@
+# systemd unit for TurokServer on Linux (runs the Windows-built TurokServer.exe with Mono).
+#
+#   sudo apt install mono-complete
+#   sudo useradd --system --home /opt/turokserver turok
+#   sudo mkdir -p /opt/turokserver && sudo cp TurokServer.exe server.ini /opt/turokserver/
+#   sudo chown -R turok:turok /opt/turokserver
+#   sudo cp turokserver.service /etc/systemd/system/
+#   sudo systemctl daemon-reload && sudo systemctl enable --now turokserver
+#   sudo ufw allow 30720:30721/udp        (if ufw is used)
+#
+# Logs: /opt/turokserver/logs and "journalctl -u turokserver".
+
+[Unit]
+Description=Turok 2008 Rendez-Vous emulator
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=turok
+WorkingDirectory=/opt/turokserver
+ExecStart=/usr/bin/mono /opt/turokserver/TurokServer.exe
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
